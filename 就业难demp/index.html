@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="Zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>云音乐</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="js/script.js"></script>
+</head>
+<body>
+	<div class="music">
+		<img id="music" src="./img/music_disc.png">
+		<img class="music_pointer" src="./img/music_pointer.png">
+	</div> 
+	
+	<div class="page1" id="page1">
+		<audio autoplay="true" id="time_audio">
+		<source src="music/5second.mp3" type="audio/mpeg">
+		</audio> 
+		<div class="overlay"></div>
+		<div class="cell">
+		  <div class="num">5 4 3 2 1 0</div>
+		 </div>
+		 
+	</div>
+	<div class="page2" id="page2">
+		<audio id="airplane_audio">
+		<source src="music/airplane.mp3" type="audio/mpeg">
+		</audio>
+		<img class="img_airplane" id="img_airplane" src="./img/img_airplane.png">
+		<a href="#" class="page2_btn" id="page2_btn">
+			<span>点击开启应聘之旅</span>
+		</a>
+	</div>
+	<div class="page3" id="page3">
+		<div class="sun">
+			<img src="./img/img_sun.png">
+		</div>
+		<div class="house">
+			<img src="./img/img_house.png">
+		</div>
+		<div class="people" id="people">
+			<img id="people_play" src="./img/img_people.png">
+		</div>
+		<div id="p1_dialogue1">
+			
+		</div>
+		<div class="p1_dialogue2"></div>
+		<div class="p1_dialogue3"></div>
+		<div class="airplane"></div>
+	</div>
+<!-- 	<div class="page4" id="page4">
+	谢谢观赏
+</div> -->
+	<audio id="bg_audio">
+		<source src="music/Tobu - Hope.mp3" type="audio/mpeg">
+	</audio>
+</body>
+</html>

@@ -1,4 +1,5 @@
 window.onload=function(){
+	//这样写好臃肿
 	var music =document.getElementById("music");
 	var bg_audio=document.getElementById("bg_audio");
 	var time_audio=document.getElementById("time_audio");
@@ -7,16 +8,22 @@ window.onload=function(){
 	var people=document.getElementById("people");
 	var people_img=document.getElementById("people_play");
 	var dia_playone=document.getElementById("p1_dialogue1");
-	var page1=document.getElementById("page1");
+	/*var page1=document.getElementById("page1");*/
 	var btn=document.getElementById("page2_btn");
-	var page3=document.getElementById("page3");
+	var p1_title=document.getElementById("p1_title");
+	var num=document.getElementById("num");
+	/*var page3=document.getElementById("page3");*/
 	page1.addEventListener('onload',function(){
 		time_audio.play();
 	});
 	setTimeout(function(){
-		page1.style.display='none';
-		page2.style.display='block';
-		page3.style.display='none';
+		p1_title.style.display="block";
+		num.style.display="none";
+			page1.addEventListener('touchstart', function(){
+	    		page1.style.display='none';
+				page2.style.display='block';
+				page3.style.display='none';
+			},false);
 	},6000);
 	btn.addEventListener('touchstart',function(){
 		airplane_audio.play();

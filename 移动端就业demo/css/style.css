@@ -19,16 +19,24 @@ body {
     background: url("../img/p1_bg.png") center no-repeat;
     background-size:100%;
 }
+.circle_bg{
+    position: absolute;
+    width: 80vw;
+    height: 80vw;
+    left:10vw;
+    top:10vw;
+    background: url("../img/p1_circle.png") center no-repeat; 
+}
 .cell{
     position:absolute;
-    width: 30vw;  
-    height: 30vw;
+    width: 32vw;  
+    height: 32vw;
     border-radius: 50%;
     /* border:1vw solid rgba(255,0,0,0.5); */
     font-size:30vw;
     overflow: hidden;
-    top:45%;
-    left:35%;
+    top:28vw;
+    left:25vw;
     opacity:1;
     animation:go 6s;
     -webkit-animation:go 6s;
@@ -37,7 +45,7 @@ body {
 .num{
     position:absolute;
     width: 29vw;
-    color:#E53F39;
+    color:#f7f7f7;
     line-height: 29vw;
     font-size: 29vw;  
     text-align: center;
@@ -62,6 +70,15 @@ body {
   0%   {opacity:1;}
   84%  {opacity:1;transform:rotate(0deg) scale(1);}
   100% {opacity:0;transform:rotate(360deg) scale(.01);}
+}
+.p1_title{
+     position:absolute;
+     width: 28vw;
+     height: 28vw;
+     top:2vw;
+     left: 2vw;
+     background: url("../img/p1_title.png") center no-repeat;
+     display: none;
 }
 /* page2 */
 .page2{

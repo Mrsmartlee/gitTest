@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+	
+		function alertMessage(){
+			showMessage();
+		}
+		function showMessage(){
+			var win=createEle('div');
+			win.style.cssText="background:#f0f0f0;width:300px;height:200px;";
+			var tBar = createEle('div'); 
+			//afccfe,dce8ff,2b2f79 
+			tBar.style.cssText = "margin:0;width:300px;height:30px;background:#2599F2;cursor:move;"; 
+			//标题栏中的文字部分 
+			var titleCon = createEle('div'); 
+			titleCon.style.cssText = "float:left;margin:6px;color:white;"; 
+			titleCon.innerHTML = title;//firefox不支持innerText，所以这里用innerHTML 
+			tBar.appendChild(titleCon); 
+			//标题栏中的“关闭按钮” 
+			var closeCon = createEle('div'); 
+			closeCon.style.cssText = "float:right;width:20px;margin:6px;cursor:pointer;color:white;";//cursor:hand在firefox中不可用 
+			closeCon.innerHTML = "×"; 
+			tBar.appendChild(closeCon); 
+			win.appendChild(tBar); 
+			//窗体的内容部分，CSS中的overflow使得当内容大小超过此范围时，会出现滚动条 
+			var htmlCon = createEle('div'); 
+			htmlCon.style.cssText = "margin-top:12px;margin-left:12px;text-align:left;width:300px;height:100px;overflow:auto;"; 
+			htmlCon.innerHTML = html; 
+			win.appendChild(htmlCon); 
+			//窗体底部的按钮部分 
+			var btnCon = createEle('div'); 
+			btnCon.style.cssText = "width:20px;height:50px;text-height:20px;background:#F7F7F7;text-align:center;padding-top:10px;";
+			appChild(win); 
+			}
+
+		function createEle(tagName){
+			return document.createElement(tagName);
+		}
+		function appChild(eleName) 
+		{ 
+		return document.body.appendChild(eleName); 
+		} 
+	</script>
+</head>
+<body>
+	HEllO MY MESSAGE!<br>
+	<input type="button" name="" value="弹窗" onclick="alertMessage()">
+</body>
+</html>

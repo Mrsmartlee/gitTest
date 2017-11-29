@@ -1,0 +1,161 @@
+* {
+	padding: 0;
+	margin: 0;
+	font-size: 12px;
+}
+body {
+	background-color: #F5F5F5;
+	background:url(../images/pic-home.jpg) repeat center;
+	background-attachment:fixed;
+}
+nav{
+	position: fixed;
+	width:100%;
+	margin: 0 auto;
+}
+.top {
+	/* position: fixed; */
+	width: 100%;
+	height: 27px;
+	margin: 0 auto;
+	background: url(../images/top_bg.jpg) repeat-x;
+}
+.top_content {
+	line-height: 27px;
+} 
+.top_content li {
+	float: right;
+	list-style-image: url(../images/arrow.jpg);
+	width: 70px;
+}
+.top_content a:link, .top_content a:visited {
+	color: #8E8E8E;
+	text-decoration: none;
+}
+.top_content a:hover, .top_content a:active {
+	color: #C00;
+	text-decoration: none;
+}
+ .nav{
+	height: 40px;
+	width:100%;
+	background-color: #222;
+	margin: 0 auto;
+} 
+/* 整夜的导航吧 */
+/* .nav_left {
+	width: 10px;
+	background: url(../images/nav_left.jpg) no-repeat;
+} */
+.nav_mid {
+	width: 100%;
+	background: url(../images/nav_bg.jpg) repeat-x;
+	line-height: 40px;
+}
+/* .nav_right {
+	width: 10px;
+	background: url(../images/nav_right.jpg) no-repeat;
+} */
+.nav_left, .nav_mid, .nav_right {
+	height: 40px;
+	float: left;
+	display: inline;
+}
+.nav_mid li {
+	float: left;
+	list-style-type: none;
+	width: 120px;
+	text-align: center;
+}
+.nav_mid a:link, .nav_mid a:visited {
+	font-size: 16px;
+	color: #FFF;
+	text-decoration: none;
+}
+.nav_mid a:hover, .nav_mid a:active {
+	font-size: 16px;
+	color:#009999;
+	text-decoration: none;
+}
+.nav_mid_left {
+	width: 50%;
+	margin-left:20%;
+}
+.nav_mid_right {
+	width: 30%;
+}
+.search_text {
+	width: 250px;
+	float: left;
+	height: 25px;
+	margin-top: 7px;
+	background: url(../images/search.jpg) no-repeat right center;
+	background-color: #FFF;
+	border: 1px solid #FFF;
+	padding-right: 25px;
+}
+.nav_mid_left, .nav_mid_right {
+	float: left;
+	display: inline;
+}
+/* 前缀伪元素使用.mytxt:before{
+} */
+/* 主体部分 */
+.page_body{
+	width: 1000px;
+	margin: 0 auto;
+}
+/* 边目录 */
+.page_aside{
+	position: fixed;
+    width: 230px;
+    margin-top: 70px;
+    overflow-y: auto;
+    background: #222;
+    top: 0;
+    bottom: 0;
+    display: block;
+    border-width:0 2px;
+	border-style:solid;
+	border-color:#333;
+	color: #fff;
+	z-index: 2;
+	-webkit-box-shadow:  0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow:  0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+	box-shadow:  0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+}
+.menu_title{
+	position: relative;
+	padding: 30px 0 20px 55px;
+	font-size: 16px;
+}
+
+.page_con{
+	position: relative;
+	width: 750px;
+	height:1000px;
+	float: left;
+	margin-left: 250px;
+	margin-top:70px;
+	color: #fff;
+	background-color:#222;
+	z-index: -1;
+	    border-width:0 2px;
+	border-style:solid;
+	border-color:#333;
+	-webkit-box-shadow:  0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow:  0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+	box-shadow:  0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+	
+}
+.myNote{
+	width: 700px;
+	color:#fff;
+	margin: 20px auto;
+}
+.myNote p{
+	margin:10px auto;
+}
+.myNote pre code{
+	color: #fff;
+}

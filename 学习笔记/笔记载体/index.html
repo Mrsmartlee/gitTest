@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" name="viewport">
+	<title>首页</title>
+	<link href="css/style.css" rel="stylesheet" type="text/css" >
+	<script type="text/javascript" src="js/setHomeSetFav.js"></script>
+	<script type="text/javascript" src="js/myfocus-2.0.1.min.js" charset="utf-8"></script>
+</head>
+<body>
+<nav>
+	<div class="top">
+		<div class="top_content">
+			<ul>
+				<li><a href="#">联系我们</a></li>
+				<li><a href="#" onclick="AddFavorite(window.location,document.title)">加入收藏</a></li>
+				<li><a href="#" onclick="setHome(window.location)">设为首页</a></li>
+			</ul>	
+		</div>
+	</div><!-- top结束 -->
+	<div class="nav">
+
+		<div class="nav_left"></div>
+		<div class="nav_mid">
+			<div class="nav_mid_left">
+				<ul>
+					<li><a href="#">首页</a></li>
+					<li><a href="list.html">HTML/CSS</a></li>
+					<li><a href="list.html">JavaScript</a></li>
+					<li><a href="list.html">FCL</a></li>
+				</ul>
+			</div>
+			<div class="nav_mid_right">
+				<form action="" method="post">
+	          	<input type="text" class="search_text" />
+	        	</form>
+			</div>
+		</div>
+		<div class="nav_right">
+			
+		</div>
+	</div><!-- 导航条结束 -->
+</nav>
+	<!-- 主体部分 -->
+	<div class="page_body">
+		<!-- 边目录  先隐藏-->
+		<div class="page_aside">
+			<ul class="page_menu">
+				<li class="menu_item">
+					<h3 class="menu_title">
+						<span class="icon_menu"></span>
+						知识点目录
+					</h3>
+					<ul class="item_html">
+						<li class="item_son"></li>
+						<li class="item_son"></li>
+						<li class="item_son"></li>
+						<li class="item_son"></li>
+					</ul>
+				</li>
+				<li class="menu_item">
+					<h3 class="menu_title">
+						<span class="icon_menu"></span>
+						
+					</h3>
+					<ul class="item_css">
+						<li class="item_son"></li>
+						<li class="item_son"></li>
+						<li class="item_son"></li>
+						<li class="item_son"></li>
+					</ul>
+				</li>
+				<li class="menu_item">
+					<h3 class="menu_title">
+						<span class="icon_menu"></span>
+						
+					</h3>
+					<ul class="item_JavaScript">
+						<li class="item_son"></li>
+						<li class="item_son"></li>
+						<li class="item_son"></li>
+						<li class="item_son"></li>
+					</ul>
+				</li>
+				<li class="menu_item">
+					<ul class="item_FCL">
+						<li class="item_son"></li>
+						<li class="item_son"></li>
+						<li class="item_son"></li>
+						<li class="item_son"></li>
+					</ul>
+				</li>
+			</ul>
+		</div> 
+		<!-- 内容 -->
+		<div class="page_con">
+			<div class="myNote">
+			</div>
+		</div>
+	</div>
+</body>
+</html>

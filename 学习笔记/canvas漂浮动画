@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>漂浮动画</title>
+	<style type="text/css" media="screen">
+		*{
+			margin:0;
+		}
+		canvas{
+			display: block;
+			
+			}
+	</style>
+</head>
+<body>
+	<canvas id="bubble">
+		
+	</canvas>
+	<script>
+		/*程序逻辑
+			1：让canvas元素的大小与浏览器窗口一样大
+				1.1获取canvas元素
+				1.2 获取窗口大小innerHeight,innerWidth
+				1.3 设置canvas元素大小
+				1.4 当浏览器大小改变时，canvas大小也要改变
+		*/
+		var canvas=document.getElementById("bubble");
+		var w=window.innerWidth;
+		var h=window.innerHeight;
+		canvas.width=w;
+		canvas.height=h;
+		//窗口发生变化
+		window.onresize=function(){
+			w=window.innerWidth;
+			h=window.innerHeight;
+			canvas.width=w;
+			canvas.height=h;
+		}
+		/*
+			利用canvas绘制图形
+		*/
+		var y=100;
+		var canCon=canvas.getContext("2d");//拿到纸
+		
+		/*
+			让动画动起来 1000/60ms实现一次动画
+			1.清除之前得动画
+			2.提起笔重画
+		*/
+/*		setInterval(function(){
+			canCon.clearRect(0,0,w,h);//从（0.0）清除到（w,h）
+			canCon.beginPath();//提笔
+			canCon.fillStyle="red";//拿笔站颜色
+			canCon.arc(250,y++,100,0,Math.PI*2);//圆（x,y,r,起始角,结束角,顺时针/逆时针（true/false））
+			canCon.fill();//下笔画
+		},1000/60)*/
+		function Bubble(){
+
+		}
+		function random(min,max){
+			return Math.random()*(max-min)+min;
+		}
+		var aColor=["#1db0d8","#c7b305","#e08031"];//存颜色数组
+
+		Bubble.prototype={
+			init:function(){//定义小球生成时大小，位置
+				this.x=random(0,w);
+				this.y=random(0,h);
+				this.r=random(3,8);
+				this.color=aColor[Math.floor(random(0,3))];
+				this.xmove=random(-1,1);//小球x移动的偏移量
+				this.ymove=random(-1,1);//小球y移动的偏移量
+				this.D=40;//规定鼠标20像素范围内小球变化
+				this.vr=random(1,2);//小球变化速度
+				
+			},
+			draw:function(){
+				canCon.beginPath();//提笔
+				canCon.fillStyle=this.color;//拿笔站颜色
+				canCon.arc(this.x,this.y,this.r,0,Math.PI*2);//圆（x,y,r,起始角,结束角,顺时针/逆时针（true/false））
+				canCon.fill();//下笔画
+			},
+			move:function(){
+				this.x+=this.xmove;
+				this.y+=this.ymove;
+				//碰撞时速度取反，则显示反弹效果
+				if(this.x-this.r<0||this.x-this.r>w){
+					this.xmove=-this.xmove
+				}
+				if(this.y-this.r<0||this.y-this.r>h){
+					this.ymove=-this.ymove
+				}
+				//取到鼠标位置一定范围内的位置
+				this.xD=Math.abs(pX-this.x);//鼠标X轴位置
+				this.yD=Math.abs(pY-this.y);//鼠标Y轴位置
+				if(this.xD<this.D&&this.yD<this.D&&this.r<100){
+					this.r+=this.vr;
+				}else if(this.xD>this.D&&this.yD>this.D&&this.r>8){
+					//条件规定在离开鼠标一定范围后开始减小，但是不能减小到太小，如果不规定this.r>8的范围（8是生成的圆半径最大值），则会瞬间减小到0以下，报错
+					this.r-=this.vr;
+				}
+				this.draw();
+			}
+		}
+		var bubbleArry=[];//存小球数组
+		function create(){
+			var bubble=new Bubble();
+			canCon.clearRect(0,0,w,h);
+			bubble.init();
+			bubble.draw();
+			bubbleArry.push(bubble);//每生成一个就放数组，以便寻找
+			
+		}
+		setInterval(function(){
+			canCon.clearRect(0,0,w,h);//清除
+			//使用for of 而不使用for in的原因是of能取到每个对象的键值，in只能取到每个对象的键名
+			for(var item of bubbleArry){//取出数组内每个小球，并让他执行move，随机移动
+				item.move();
+			}
+		},1000/60)
+		
+
+		for(var i=0;i<666;i++){
+			create();
+		}
+		var pX,pY;
+		canvas.onmousemove=function(){
+			var ev=ev||window.event;
+			pX=ev.clientX;
+			pY=ev.clientY;
+		}
+	</script>
+</body>
+</html>
